@@ -2,8 +2,12 @@ import logo from './logo.svg';
 import './App.css';
 import Comp1 from './componenets/Comp1';
 import Comp2 from './componenets/Comp2';
+import { useDispatch } from "react-redux"
+
 
 function App() {
+  const dispatch = useDispatch()
+
   return (
     <div className="App">
       {/* <header className="App-header">
@@ -22,7 +26,11 @@ function App() {
       </header> */}
       <Comp1/>
       <Comp2/>
-      
+      <button onClick={()=>dispatch({type:'ADD'})}>Increment</button>
+      <button onClick={()=>dispatch({type:'SUBTRACT'})}>DECREMENT</button>
+
+
+
 
     </div>
   );
