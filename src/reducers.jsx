@@ -12,7 +12,6 @@ const myReducer=(state=initial,action)=>{
 
     if (action.type==='ADD'){
             newState.age+=1
-            console.log(newState)
     }
     else if (action.type ==='SUBTRACT'){
         newState.age=newState.age-1
