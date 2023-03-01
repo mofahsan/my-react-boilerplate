@@ -1,11 +1,11 @@
-const initialstate={
+const initial={
     name:"ahsan"
 }
 
 
 
-export default function reducer2 (state=initialstate,action){
-            const newState={...initialstate}
+export default function reducer2 (state=initial,action){
+            const newState={...state}
 
             if(action.type=='UPDATE'){
                 newState.name="AQDAS"
