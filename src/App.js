@@ -28,6 +28,7 @@ function App() {
       <Comp2/>
       <button onClick={()=>dispatch({type:'ADD'})}>Increment</button>
       <button onClick={()=>dispatch({type:'SUBTRACT'})}>DECREMENT</button>
+      <button onClick={()=>dispatch({type:'UPDATE'})}>Change name</button>
 
 
 

@@ -4,8 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import {createStore} from 'redux'
-import rootReducer from './reducers'
+import {createStore,combineReducers} from 'redux'
+import reducer1 from './reducers'
+import reducer2 from './reducer2';
+
+const rootReducer= combineReducers({age:reducer1,name:reducer2})
 const store = createStore(rootReducer)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
