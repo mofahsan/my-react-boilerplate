@@ -10,9 +10,9 @@ export default function UseCallback(){
     const [dark,setDark] = useState(false)
 
     //problem :- without useCallback even when theme changes list useEffect was running consoling updating items because  component rerender and a different getItems function is created each time and passed causing list useEffect to run 
-    const getItems=()=>{
+    const getItems=useCallback(()=>{
         return [number , number + 1 , number + 2]
-    }
+    },[number])
 
     const theme = {
         backgroundColor: dark ? '#333' : '#FFF',
