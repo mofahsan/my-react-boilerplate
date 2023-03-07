@@ -1,9 +1,13 @@
-import { useState } from "react";
+import { useState,useMemo } from "react";
 
 export default function UseMemo(){ // The problem is that each time number value changes OR dark theme value changes component rerender as state changes slow function will be triggered again and again causing delay we don't want to recompute dublenumber if we're not changing number value therefore we will cache value of slow function .
        const [number,setNumber] =  useState(0)
        const [dark,setDark] =  useState(false)
-       const doubleNumber = slowFunction(number)
+       const doubleNumber = useMemo(() => { // now when changing theme the cached value will be used from slowFunction instead of recalculation
+        return slowFunction(number)
+       },[number])
+       
+       
        const themeStyles = {
         backgroundColor : dark ? 'black' : 'white',
         color : dark ? 'white' : 'black'
